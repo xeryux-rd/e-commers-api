@@ -1,24 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
+import LoginPage from "./pages/LoginPage";
+import ProductsListPage from "./pages/ProductsListPage";
+import UsersListPage from "./pages/UsersListPage";
+import CartPage from "./pages/CartPage";
+import { Routes, Route } from "react-router-dom";
+import ProductFormPage from "./pages/ProductFormPage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen">
+      <ProtectedRoute>
+        <Navbar />
+      </ProtectedRoute>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+
+        <Route
+          path="/products"
+          element={
+            <ProtectedRoute>
+              <ProductsListPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/products/new"
+          element={
+            <ProtectedRoute>
+              <ProductFormPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/products/:id/edit"
+          element={
+            <ProtectedRoute>
+              <ProductFormPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute>
+              <UsersListPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/carts"
+          element={
+            <ProtectedRoute>
+              <CartPage />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+
     </div>
   );
 }
