@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/e-commers-react-aldy/static/css/main.7f758f04.css",
+    "main.js": "/e-commers-react-aldy/static/js/main.911127f7.js",
+    "index.html": "/e-commers-react-aldy/index.html",
+    "main.7f758f04.css.map": "/e-commers-react-aldy/static/css/main.7f758f04.css.map",
+    "main.911127f7.js.map": "/e-commers-react-aldy/static/js/main.911127f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f758f04.css",
+    "static/js/main.911127f7.js"
+  ]
+}
